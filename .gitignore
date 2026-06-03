@@ -1,0 +1,58 @@
+# Virtual Environment
+venv/
+env/
+ENV/
+
+# Python Cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Environment Variables
+.env
+.env.*
+
+# VS Code
+.vscode/
+
+# PyCharm
+.idea/
+
+# Build Files
+build/
+dist/
+*.egg-info/
+
+# Logs
+*.log
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Type Checking
+.mypy_cache/
+
+# Data Science / ML
+models/
+outputs/
+artifacts/
+
+# Temporary Files
+temp/
+tmp/
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Tally / Excel temporary files
+~$*.xlsx
+~$*.xls
