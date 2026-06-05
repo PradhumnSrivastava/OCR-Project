@@ -1,0 +1,13 @@
+paddleocr
+paddlepaddle
+opencv-python
+pillow
+matplotlib
+streamlit
+transformers
+torch
+torchvision
+sentencepiece
+pdf2image
+pytesseract
+numpy
