@@ -1,7 +1,7 @@
 from transformers import pipeline
 
 translator = pipeline(
-    "translation",
+    task="translation_en_to_hi",
     model="Helsinki-NLP/opus-mt-en-hi"
 )
 
