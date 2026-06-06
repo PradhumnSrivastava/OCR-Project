@@ -1,3 +1,7 @@
+import os
+
+os.environ["FLAGS_use_mkldnn"] = "0"
+
 from paddleocr import PaddleOCR
 
 ocr = PaddleOCR(
@@ -7,18 +11,29 @@ ocr = PaddleOCR(
 
 def extract_text(image_path):
 
-    result = ocr.ocr(image_path)
+    try:
 
-    extracted_text = []
+        result = ocr.ocr(image_path)
 
-    for line in result[0]:
+        extracted_text = []
 
-        text = line[1][0]
-        confidence = line[1][1]
+        if result and result[0]:
 
-        extracted_text.append({
-            "text": text,
-            "confidence": confidence
-        })
+            for line in result[0]:
 
-    return extracted_text
+                text = line[1][0]
+                confidence = line[1][1]
+
+                extracted_text.append({
+                    "text": text,
+                    "confidence": confidence
+                })
+
+        return extracted_text
+
+    except Exception as e:
+
+        return [{
+            "text": f"OCR Error: {str(e)}",
+            "confidence": 0
+        }]
